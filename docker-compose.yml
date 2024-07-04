@@ -55,9 +55,35 @@ services:
             - '${FORWARD_MAILPIT_DASHBOARD_PORT:-8025}:8025'
         networks:
             - sail
+    umami:
+        image: ghcr.io/umami-software/umami:postgresql-latest
+        ports:
+            - "3000:3000"
+        environment:
+            DATABASE_URL: postgresql://umami:umami@umami-db:5432/umami
+            DATABASE_TYPE: postgresql
+            HASH_SALT: ${UMAMI_HASH_SALT:-replace-me-with-a-random-string}
+        depends_on:
+            - umami-db
+        networks:
+            - sail
+
+    umami-db:
+        image: postgres:15-alpine
+        environment:
+            POSTGRES_DB: umami
+            POSTGRES_USER: umami
+            POSTGRES_PASSWORD: umami
+        volumes:
+            - umami-db-data:/var/lib/postgresql/data
+        networks:
+            - sail
+
 networks:
     sail:
         driver: bridge
 volumes:
     sail-mysql:
+        driver: local
+    umami-db-data:
         driver: local

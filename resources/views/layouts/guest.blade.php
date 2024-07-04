@@ -7,7 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('images/caticon.svg') }}">
 
-
+    <!--UMAMI-->
+    <script defer src="http://localhost:3000/script.js" data-website-id="c3fa5327-a6d3-4974-ab61-c7ade6aea3c3"></script>
     @stack('head')
 
     <!-- Fonts -->
