@@ -1,5 +1,5 @@
 @php
-    $pages = \App\Models\Page::all();
+    $pages = \App\Models\Page::where('published', true)->get();
     $categories = \App\Models\PageCategory::has('pages')->get();
     $menuItems = \App\Models\MenuItem::orderBy('order')->get();
 @endphp
@@ -63,11 +63,14 @@
                     @if ($item->pages->count() > 1)
                         <li>
                             <details>
-                                <summary class="hover:font-bold ">{{ $item->name }}</summary>
+                                <summary
+                                    class="hover:font-bold @if (count(request()->segments()) > 0) @if (str()->slug(request()->segments()[0]) == str()->slug($item->name)) text-accent @endif @endif">
+                                    {{ $item->name }}</summary>
                                 <ul class="p-2 z-40 w-48 bg-primary text-primary-content">
                                     @foreach ($item->pages as $page)
                                         <li><a href="/{{ $page->buildSlug() }}"
-                                                class="hover:font-bold @if (request()->is($page->buildSlug())) text-accent @endif">{{ str()->headline($page->name) }}</a>
+                                                class="hover:font-bold @if (request()->is($page->buildSlug())) text-accent @endif">
+                                                {{ str()->headline($page->name) }}</a>
                                         </li>
                                     @endforeach
                                 </ul>

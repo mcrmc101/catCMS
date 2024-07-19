@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'umami' => [
+        'user' => env('UMAMI_USERNAME'),
+        'password' => env('UMAMI_PASSWORD'),
+        //'api' => env('UMAMI_API_ENDPOINT'),
+        'api' => env('UMAMI_API_URL'),
+        'website_id' => env('UMAMI_WEBSITE_ID'),
+    ]
+
 ];

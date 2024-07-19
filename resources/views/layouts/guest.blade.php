@@ -8,7 +8,7 @@
     <link rel="icon" href="{{ asset('images/caticon.svg') }}">
 
     <!--UMAMI-->
-    <script defer src="http://localhost:3000/script.js" data-website-id="c3fa5327-a6d3-4974-ab61-c7ade6aea3c3"></script>
+    <script defer src="http://localhost:3000/script.js" data-website-id="12758c6f-b083-4a17-9aa5-cbc3da67b62f"></script>
     @stack('head')
 
     <!-- Fonts -->

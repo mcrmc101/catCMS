@@ -27,20 +27,26 @@
                     width="auto" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <div class="flex prose max-w-none items-start gap-4">
-                    <dl>
-                        <dt>Address</dt>
-                        <dd>10 That Street</dd>
-                        <dd>Some Town</dd>
-                        <dd>Over There</dd>
-                    </dl>
-                    <dl>
-                        <dt>Phone</dt>
-                        <dd>0898 123 123</dd>
-                    </dl>
-                    <dl>
-                        <dt>Email</dt>
-                        <dd>test@test.test</dd>
-                    </dl>
+                    <div>
+                        <dl>
+                            <dt>Address</dt>
+                            <dd>10 That Street</dd>
+                            <dd>Some Town</dd>
+                            <dd>Over There</dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>Phone</dt>
+                            <dd>0898 123 123</dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>Email</dt>
+                            <dd>test@test.test</dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </x-filament::section>
